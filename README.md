@@ -9,30 +9,10 @@ A **class** is the blueprint or template used to create objects. It defines the 
 - **Properties**: Variables that hold data about the object.
 - **Methods**: Functions that define the behavior of the object.
 
-### Example:
-```dart
-class Person {
-  String name = '';
-  int age = 0;
-
-  void speak() {
-    print('$name is speaking.');
-  }
-}
-
 ---
 
 ## **Object (الكائن)**
 An **object** is an instance of a class. It is a concrete realization of the class template, with actual data and behaviors.
-
-### Example:
-```dart
-void main() {
-  Person person1 = Person();
-  person1.name = 'Mahmoud';
-  person1.age = 25;
-  person1.speak(); // Output: Mahmoud is speaking.
-}
 
 
 ---
