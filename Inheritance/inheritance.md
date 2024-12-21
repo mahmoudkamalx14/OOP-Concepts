@@ -223,6 +223,45 @@ void main() {
 
 ---
 
+## Composition vs Inheritance
+**Composition** is an alternative to inheritance where instead of inheriting from a parent class, a class contains an instance of another class as a field. This allows more flexibility and avoids some of the limitations of inheritance.
+
+### Example of Composition:
+```dart
+class Engine {
+  void start() {
+    print('Engine started');
+  }
+}
+
+class Car {
+  final Engine engine;
+
+  Car(this.engine);
+
+  void drive() {
+    engine.start();
+    print('Car is driving');
+  }
+}
+
+void main() {
+  Engine engine = Engine();
+  Car car = Car(engine);
+
+  car.drive();
+  // Output:
+  // Engine started
+  // Car is driving
+}
+```
+
+### When to Use Composition
+- Use **composition** when you want to model a "has-a" relationship (e.g., a car *has* an engine).
+- Use **inheritance** when you want to model an "is-a" relationship (e.g., a dog *is* an animal).
+
+---
+
 ## Summary
 - **Inheritance** enables code reuse and extension.
 - Use `super` to interact with the parent class.
@@ -231,5 +270,6 @@ void main() {
 - Constructors in child classes must call the parent constructor if one exists.
 - Use `final` or `sealed` to restrict inheritance.
 - Polymorphism allows treating child objects as parent types.
+- **Composition** provides a flexible alternative to inheritance for "has-a" relationships.
 
-Inheritance is a powerful concept, but it should be used wisely to maintain code simplicity and avoid unnecessary complexity.
+Inheritance and composition are both powerful tools in OOP. Choose the right one based on your use case to write clean and maintainable code.
